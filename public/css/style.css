@@ -1,0 +1,101 @@
+body{
+    font-weight: 200;
+    font-size: 18 !important;
+}
+
+.grey{
+    background: lightgrey;
+    padding-bottom: 20px;
+}
+
+#myModal{
+    top: 10%;
+}
+
+.navbar.navbar-inverse{
+    border: none;
+    border-radius: 0px;
+    color: white;
+    font-size: 18;
+    z-index: 100000;
+}
+
+.white{
+    color: white;
+}
+
+.home-top{
+    height: 60vh;
+    background: url(../photos/bg.jpg);
+    background-size: cover;
+}
+
+.vert-center{
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.center{
+    text-align: center;
+}
+
+.intro{
+    font-size: 18 !important;
+}
+
+.footer{
+    color: white;
+    padding: 10px;
+    background: gray;
+    font-size: 14;
+}
+
+.footer a{
+    color: white;
+}
+
+.table.table-hover{
+    border: 1px solid lightgrey;
+}
+
+.table-cont{
+    padding: 20px;
+}
+
+.address{
+    font-size: 16px;
+}
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+input[type="radio"]:checked ~ .reveal-if-active,
+input[type="checkbox"]:checked ~ .reveal-if-active {
+  opacity: 1;
+  max-height: 100px; /* little bit of a magic number :( */
+  overflow: visible;
+}
+
+.padded-thumb{
+    margin: 10px;
+}
+
+.tiny-flag{
+    height: 20px;
+}
+
+.fancy{
+    background: white;
+    padding-top: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+bg-grey{
+    background: grey;
+}
+

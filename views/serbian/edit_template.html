@@ -1,0 +1,211 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+       <link href="/bower_components/tablesorter/themes/blue/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/bower_components/tablesorter/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        var FormStuff = {
+
+  init: function() {
+    this.applyConditionalRequired();
+    this.bindUIActions();
+  },
+
+  bindUIActions: function() {
+    $("input[type='radio'], input[type='checkbox']").on("change", this.applyConditionalRequired);
+  },
+
+  applyConditionalRequired: function() {
+
+    $(".require-if-active").each(function() {
+      var el = $(this);
+      if ($(el.data("require-pair")).is(":checked")) {
+        el.prop("required", true);
+      } else {
+        el.prop("required", false);
+      }
+    });
+
+  }
+
+};
+    </script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="home-top">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">Editing Portal</div>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>-->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Edit <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/edit_translating">Translating</a></li>
+                                <li><a href="/edit_writing">Writing</a></li>
+                                <li><a href="/edit_editing">Editing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/">Return to Site</a></li>
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/translating">Translating</a></li>
+                                <li><a href="/writing">Writing</a></li>
+                                <li><a href="/editing">Editing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/resume">Resume</a></li>
+                        <li><a href="/contact">Contact</a></li>-->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="vert-center center">
+            <h1 class="white">{{{name}}}</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 table-cont">
+            <table id="myTable" class="table table-hover tablesorter">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#list}}
+                    <tr class="clickable-row" data-url="{{path}}">
+                        <td>{{title}}</td>
+                        <td>{{category}}</td>
+                        <td>{{type}}</td>
+                        <td><a class="btn btn-default" href="/{{id}}">Delete</a></td>
+                    </tr>
+                    {{/list}}
+                    <!--<tr>
+                        <td>Translation 1</td>
+                        <td>Category 1</td>
+                        <td>PDF</td>
+                        <td><a class="btn btn-default" href="/delete&id=0">Delete</a></td>
+                    </tr>-->
+                </tbody>
+                <script>
+                    jQuery(document).ready(function($) {
+                        $(".clickable-row").click(function() {
+                            window.document.location = $(this).data("url");
+                        });
+                    });
+                </script>
+                <script>
+                $(document).ready(function()
+                    {
+                        $("#myTable").tablesorter();
+                    }
+                );
+            </script>
+            </table>
+            <div class="center">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Upload
+                </button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Upload New File</h4>
+                            </div>
+                        <form method="post" enctype="multipart/form-data" id="isFile">
+                            <div class="modal-body">
+                                    <!--<div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                            Upload File
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                            Insert Link
+                                        </label>
+                                    </div>-->
+                                    <div class="form-group">
+                                        <input type="radio" name="input" value="fileInput" id="fileInput">
+                                        <label>Upload a File</label>
+                                        <div class="reveal-if-active">
+                                            <input type="file" name="file" id="file" class="require-if-active form-control" data-require-pair="#fileInput">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="radio" name="input" value="linkInput" id="linkInput">
+                                        <label>Use a Link</label>
+                                        <div class="reveal-if-active">
+                                            <input type="url" name="link" id="link" class="form-control require-if-active" data-require-pair="#linkInput" placeholder="Link">
+                                        </div>
+                                </div>
+                                    <!--<div class="form-group">
+                                        <input type="url" class="form-control" id="link" placeholder="Link">
+                                    </div>-->
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="title" placeholder="Title" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="category" placeholder="Category" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                        <input type="checkbox" name="isFeat" value="picInput" id="picInput">
+                                            Make featured for {{{name}}}
+                                        <div class="reveal-if-active">
+                                            <label>Select cover photo</label>
+                                            <input type="file" name="pic" id="pic" class="form-control require-if-active" data-require-pair="#picInput">
+
+                                        </div>
+
+                                        </label>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="center">
+                    First Last &#9642;
+                    1234 First Street,
+                    00000 City &#9642;
+                    (000) 000-0000&#9642;
+                    <a href="mailto:fake_email@fake_email.com">fake_email@fake_email.com</a><br>
+                </div><br>
+                <div class="col-sm-4">&#169; 2016 Christian Ciabattoni</div>
+                <div class="center col-sm-4 col-sm-offset-4">Designed by <a href="http://fstackdev.com">fstackdev</a></div>
+            </div>
+        </div>
+</body>

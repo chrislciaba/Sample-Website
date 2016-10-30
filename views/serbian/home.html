@@ -1,0 +1,178 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="home-top">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand active" href="/serbian">J/S</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="/serbian">Home</a></li>
+                        <li><a href="/about&serbian">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/translating&serbian">Translating</a></li>
+                                <li><a href="/writing&serbian">Writing</a></li>
+                                <li><a href="/editing&serbian">Editing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/resume&serbian">Resume</a></li>
+                        <li><a href="/contact&serbian">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="photos/Serbia.png" class="tiny-flag"> <span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+                                <li><a href="/"><img src="photos/UK.png" class="tiny-flag"> English</a></li>
+                                <li><a href="/deutsch"><img src="photos/Germany.png" class="tiny-flag"> German</a></li>
+                                <li><a href="/russian"><img src="photos/Russia.png" class="tiny-flag"> Russian</a></li>
+                                <li><a href="/serbian"><img src="photos/Serbia.png" class="tiny-flag"> Serbian</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="vert-center center">
+            <h1 class="white">John Smith</h1>
+        </div>
+    </div>
+    <div class="intro">
+        <div class="container">
+            <h2 class="center">Introduction</h2>
+            <!--<div class="col-md-3 thumbnail">
+                <img src="/photos/profile.gif">
+            </div>-->
+            <div class="col-md-12">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Praesent ultricies venenatis nunc, in pharetra neque facilisis a.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+                per inceptos himenaeos. Ut ullamcorper, velit vitae pellentesque
+                 gravida, urna nulla sollicitudin nulla, ultricies finibus est
+                 sapien nec diam. Mauris vel metus at felis volutpat commodo
+                  vel at libero. Etiam id venenatis ante. Praesent convallis est mauris,
+                  vitae condimentum justo commodo sit amet. Curabitur sed ipsum
+                  vel urna scelerisque aliquet in eu turpis. Praesent eu sodales
+                  ante, vitae posuere lorem. Etiam vehicula orci at lorem
+                  pretium egestas. Ut quam nibh, lacinia sed justo non, faucibus bibendum turpis.</p>
+                <div class="center">
+                    <a class="btn btn-default" href="/about">
+                        Learn More
+                    </a>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="grey">
+        <div class="container">
+            <h2 class="center">
+                Featured Projects
+            </h2>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <h3 class="center">Translating</h3>
+                        <a href="{{{trLink}}}"><img src="{{trPic}}"></a>
+                        <div class="caption">
+                            <div class="center"><a href="/translating" class="btn btn-default">View All</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <h3 class="center">Writing</h3>
+                        <a href="{{{wrLink}}}"><img src="{{wrPic}}"></a>
+                        <div class="caption">
+                            <div class="center"><a href="/translating" class="btn btn-default">View All</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <h3 class="center">Editing</h3>
+                        <a href="{{{edLink}}}"><img src="{{edPic}}"></a>
+                        <div class="caption">
+                            <div class="center"><a href="/translating" class="btn btn-default">View All</a></div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
+            <h2 class="center">References</h2>
+            <div class="col-md-10 col-md-offset-1">
+                <p>
+                <br>
+                    "Sed vel felis sem. Cras at sapien ut felis cursus semper.
+                    Maecenas sollicitudin a diam a aliquam. Proin ligula orci,
+                    pretium at purus sagittis, mattis mollis nunc." <br><br>&#8212;
+                    First Last
+                </p>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <p>
+                    <br>
+                    <br>
+                    "Fusce quis elit sem. Suspendisse lacinia velit odio, at
+                    consectetur eros euismod quis. Sed vestibulum neque sagittis
+                     nisl auctor luctus. Donec posuere, tellus id luctus
+                      imperdiet, mauris nisi ultrices dui, eu dignissim
+                       leo turpis ac sem."<br><br>&#8212; First Last
+                </p>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <p>
+                <br>
+                <br>
+                    "Suspendisse vel nulla sed ipsum bibendum pharetra non a velit. Donec vulputate nibh vel justo ornare volutpat."<br><br>&#8212; First Last
+                </p>
+            </div>
+            <div class="center col-md-12">
+                <a href="/contact" class="btn btn-default">Contact Me!</a><br><br>
+            </div>
+        </div>
+    <div class="grey">
+        <div class="container">
+            <h2 class="center">Services</h2>
+
+            <div class="col-sm-4 col-sm-offset-2 thumbnail">
+                <img src="photos/workspace.jpg">
+            </div>
+            <div class="col-sm-4">
+                <ul>
+                    <li>Translations from German, Russian, and Serbian into English</li>
+                    <li>Academic writing</li>
+                    <li>Corporate writing and editing</li>
+                    <li>More Bullets</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="center">
+                First Last &#9642;
+                1234 First Street,
+                00000 City &#9642;
+                (000) 000-0000&#9642;
+                <a href="mailto:fake_email@fake_email.com">fake_email@fake_email.com</a><br>
+            </div><br>
+            <div class="col-sm-4">&#169; 2016 Christian Ciabattoni</div>
+            <div class="center col-sm-4 col-sm-offset-4">Designed by <a href="http://fstackdev.com">fstackdev</a></div>
+        </div>
+    </div>
+</body>
